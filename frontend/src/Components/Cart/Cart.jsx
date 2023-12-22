@@ -10,7 +10,7 @@ const Cart = () => {
             <div className="cart__container">
                 <article className="cart__card">
                     <div className="cart__box">
-                        <img src="assets/img/featured1.png" alt="" className="cart__img" />
+                        <img src={`${process.env.PUBLIC_URL}/assets/img/featured1.png`} alt="" className="cart__img" />
                     </div>
 
                     <div className="cart__details">
@@ -37,7 +37,7 @@ const Cart = () => {
 
                 <article className="cart__card">
                     <div className="cart__box">
-                        <img src="assets/img/featured3.png"  alt="" className="cart__img" />
+                        <img src= {`${process.env.PUBLIC_URL}/assets/img/featured1.png`}  alt="" className="cart__img" />
                     </div>
 
                     <div className="cart__details">
@@ -64,7 +64,7 @@ const Cart = () => {
 
                 <article className="cart__card">
                     <div className="cart__box">
-                        <img src="assets/img/new1.png" alt="" className="cart__img" />
+                        <img src={`${process.env.PUBLIC_URL}/assets/img/featured1.png`} alt="" className="cart__img" />
                     </div>
 
                     <div className="cart__details">

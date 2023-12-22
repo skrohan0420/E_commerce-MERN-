@@ -7,6 +7,7 @@
 
 	/*========== Colors ==========*/
 	--first-color: hsl(31, 100%, 70%);
+	--first-color-light: rgba(255, 181, 102,0.4);
 	--button-color: hsl(0, 0%, 17%);
 	--button-color-alt: hsl(0, 0%, 21%);
 	--title-color: hsl(0, 0%, 15%);
@@ -406,9 +407,10 @@ body.dark-theme {
 	text-align: center;
 	background-color: var(--container-color);
 	padding-top: 2rem;
-	border: 1px solid var(--border-color);
+	padding-bottom: 1rem;
 	overflow-y: hidden;
-	transition: .3s;
+	transition: .1s;
+	border: 0.5px solid var(--first-color-light);
 }
 
 .featured__tag {
@@ -444,17 +446,24 @@ body.dark-theme {
 	display: block;
 	color: var(--first-color);
 	transition: .3s;
+	margin-bottom: 10px;
 }
 
 .featured__button {
 	font-size: var(--small-font-size);
-	transform: translateY(1rem);
+	transform: translateY(10rem);
 	opacity: 0;
+	transition: 0.3s;
 }
 
 .featured__card:hover {
-	box-shadow: 0 12px 32px hsla(0, 0%, 20%, .1);
-	padding: 2rem 0 3rem 0;
+	box-shadow: 0 12px 32px hsla(0, 10%, 0%, .2);
+	cursor: pointer;
+	/* padding: 2rem 0 3rem 0; */
+	transform: scale(1.015);
+	/* border: none; */
+	border: 1px solid var(--border-color);
+
 }
 
 .featured__card:hover .featured__button {
@@ -462,9 +471,6 @@ body.dark-theme {
 	opacity: 1;
 }
 
-.featured__card:hover .featured__price {
-	margin-bottom: var(--mb-1-5);
-}
 
 /*=============== STORY ===============*/
 .story__container {
@@ -512,7 +518,7 @@ body.dark-theme {
 	padding: 1.25rem 0;
 	border: 1px solid var(--border-color);
 	text-align: center;
-	transition: .3s;
+	transition: 1s;
 }
 
 .products__img {
@@ -543,7 +549,7 @@ body.dark-theme {
 	position: absolute;
 	right: 0;
 	bottom: 0;
-	transition: .3s;
+	transition: 1s;
 }
 
 .products__button:hover {
