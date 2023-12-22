@@ -31,6 +31,7 @@ function Navbar() {
 
                 <div className="nav__btns">
                     {/* Theme change button  */}
+                    <i className='bx bx-user change-theme' ></i>
                     <i className='bx bx-moon change-theme' id="theme-button"></i>
 
                     <div className="nav__shop" id="cart-shop">

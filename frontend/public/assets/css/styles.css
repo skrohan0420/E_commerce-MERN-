@@ -861,7 +861,6 @@ body.dark-theme {
 	height: 100%;
 	top: 0;
 	right: -100%;
-	/* right: 0px; */
 	padding: 3.5rem 2rem;
 	transition: .4s;
 }
