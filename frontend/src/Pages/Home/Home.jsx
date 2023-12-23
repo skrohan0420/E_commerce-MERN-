@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../Components/Navbar/Navbar'
-import Cart from '../../Components/Cart/Cart'
 import ProductCardSale from '../../Components/Card/ProductCardSale'
+import Footer from '../../Components/Footer/Footer';
 function Home() {
 
 
 	return (
 		<>
 			<Navbar />
-			<Cart />
 			<main className="main">
 				{/* ============Home============ */}
 				<section className="home" id="home">
@@ -92,6 +91,8 @@ function Home() {
 					</div>
 				</section>
 			</main>
+			<Footer />
+
 		</>
 	)
 }

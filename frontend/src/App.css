@@ -6,8 +6,8 @@
 	--header-height: 3.5rem;
 
 	/*========== Colors ==========*/
-	--first-color: hsl(31, 100%, 70%);
-	--first-color-light: rgba(255, 181, 102,0.4);
+	--first-color: rgba(3, 60 ,76,1);
+	--first-color-light: rgba(3 ,60 ,76, 0.4);
 	--button-color: hsl(0, 0%, 17%);
 	--button-color-alt: hsl(0, 0%, 21%);
 	--title-color: hsl(0, 0%, 15%);
@@ -195,6 +195,148 @@ body.dark-theme {
 	background-color: var(--first-color);
 }
 
+/* ================= login ==================*/
+
+
+.login-conatiner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	/* background: var(--first-color); */
+
+}
+
+.login-page {
+	/* position: absolute; */
+	/* width: 100vw; */
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	margin-top: 4%;
+}
+
+.login-page .signin {
+	position: absolute;
+	width: 400px;
+	background: #fff;
+	/* z-index: 1000; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	/* border-radius: 4px; */
+	box-shadow: 0 15px 55px rgba(0, 0, 0, 0.3);
+}
+
+.login-page .signin .content {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.login-page .signin .content h2 {
+	font-size: 2em;
+	color: var(--first-color);
+	text-transform: uppercase;
+}
+
+.login-page .signin .content .form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.login-page .signin .content .form .inputBox {
+	position: relative;
+	width: 100%;
+}
+
+.login-page .signin .content .form .inputBox input {
+	position: relative;
+	width: 100%;
+	background: #fff;
+	border: none;
+	outline: none;
+	padding: 25px 10px 7.5px;
+	/* border-radius: 4px; */
+	outline: 0.5px solid var(--first-color);
+	font-weight: 500;
+	font-size: 1em;
+}
+
+section .signin .content .form .inputBox i {
+	position: absolute;
+	left: 0;
+	padding: 15px 10px;
+	font-style: normal;
+	color: #aaa;
+	transition: 0.5s;
+	pointer-events: none;
+}
+
+.signin .content .form .inputBox input:focus~i,
+.signin .content .form .inputBox input:valid~i {
+	transform: translateY(-7.5px);
+	font-size: 0.8em;
+	color: #fff;
+}
+
+.signin .content .form .links {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.signin .content .form .links a {
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+.signin .content .form .links a:nth-child(2) {
+	color: var(--first-color);
+	font-weight: 600;
+}
+
+.signin .content .form .inputBox input[type="submit"] {
+	padding: 10px;
+	background: var(--first-color);
+	/* color: #000; */
+	color: #fff;
+	font-weight: 600;
+	font-size: 1.35em;
+	letter-spacing: 0.05em;
+	cursor: pointer;
+	outline: none;
+}
+
+input[type="submit"]:active {
+	opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+	section span {
+		width: calc(10vw - 2px);
+		height: calc(10vw - 2px);
+	}
+}
+
+@media (max-width: 600px) {
+	section span {
+		width: calc(20vw - 2px);
+		height: calc(20vw - 2px);
+	}
+}
+
+
 /*=============== HEADER & NAV ===============*/
 .header {
 	width: 100%;
@@ -205,6 +347,8 @@ body.dark-theme {
 	z-index: var(--z-fixed);
 	/*For animation dark mode*/
 	transition: .4s;
+	background-color: var(--body-color);
+	box-shadow: 0 1px 20px hsla(0, 4%, 15%, 0.3);
 }
 
 .nav {
@@ -823,30 +967,34 @@ body.dark-theme {
 /*=============== SCROLL UP ===============*/
 .scrollup {
 	position: fixed;
-	right: 1rem;
-	bottom: -30%;
+	right: 3rem;
+	bottom: 3rem;
 	background-color: var(--container-color);
-	box-shadow: 0 4px 12px hsla(0, 0%, 20%, .1);
+	box-shadow: 0 4px 12px hsla(0, 0%, 20%, .5);
 	display: inline-flex;
 	padding: .25rem;
 	z-index: var(--z-tooltip);
-	opacity: .8;
 	transition: .4s;
+	border-radius: 100%;
 }
 
-.scrollup:hover {
-	opacity: 1;
+
+.scrollup:active {
+	box-shadow: none;
+	transform: scale(0.95);
+
 }
 
 .scrollup__icon {
-	font-size: 1.5rem;
+	font-size: 2.5rem;
+	font-weight: 900;
 	color: var(--first-color);
 }
 
 /* Show Scroll Up*/
-.show-scroll {
+/* .show-scroll {
 	bottom: 3rem;
-}
+} */
 
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
