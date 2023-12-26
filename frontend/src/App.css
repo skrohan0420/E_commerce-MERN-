@@ -168,10 +168,11 @@ body.dark-theme {
 
 .main {
 	overflow: hidden;
+	/* margin-top: 80px;	 */
 }
 
 .section {
-	padding: 6.5rem 0 1rem;
+	padding: 2.5rem 0 1rem;
 }
 
 .section__title {
@@ -193,6 +194,11 @@ body.dark-theme {
 	width: 67px;
 	height: 1px;
 	background-color: var(--first-color);
+}
+
+/* =========== single product page ========== */
+.poduct-page{
+	margin-top: 80px;
 }
 
 /* ================= login ==================*/
@@ -352,7 +358,8 @@ input[type="submit"]:active {
 }
 
 .nav {
-	height: var(--header-height);
+	/* height: var(--header-height); */
+	height: 80px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
