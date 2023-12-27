@@ -1020,6 +1020,7 @@ input[type="submit"]:active {
 	/* right: 0px; */
 	padding: 3.5rem 2rem;
 	transition: 0.5s;
+	overflow-x: scroll;
 }
 
 .cart__title-center {
@@ -1099,7 +1100,7 @@ input[type="submit"]:active {
 }
 
 .cart__prices {
-	margin-top: 6rem;
+	margin-top: 2rem;
 	display: flex;
 	justify-content: space-between;
 }
@@ -1117,7 +1118,25 @@ input[type="submit"]:active {
 	font-size: var(--h3-font-size);
 	font-weight: var(--font-medium);
 }
-
+.cart_checkoutBx{
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	margin-top: 2rem;
+}
+.cart_checkoutBx button{
+	font-size: 15px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.cart_checkoutBx i{
+	font-size: 20px;
+}
+.cart hr{
+	margin-top: 2rem;
+}
 /* Show cart */
 .show-cart {
 	right: 0;
