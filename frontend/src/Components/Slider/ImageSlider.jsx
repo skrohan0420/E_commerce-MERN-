@@ -53,59 +53,67 @@ function ImageSlider({ children }) {
     };
 
     return (
-        <div
-            className="container__slider"
-            onMouseEnter={AutoPlayStop}
-            onMouseLeave={AutoPlayStart}
-        >
-            {children.map((item, index) => {
-                return (
-                    <div
-                        className={"slider__item slider__item-active-" + (activeIndex + 1)}
-                        key={index}
-                    >
-                        {item}
-                    </div>
-                );
-            })}
-
-            <div className="container__slider__links">
+        <div className="main_sliderBx">
+            <div
+                className="container__slider"
+                onMouseEnter={AutoPlayStop}
+                onMouseLeave={AutoPlayStart}
+            >
                 {children.map((item, index) => {
                     return (
-                        <button
+                        <div
+                            className={"product-image-bx slider__item slider__item-active-" + (activeIndex + 1)}
                             key={index}
-                            className={
-                                activeIndex === index
-                                    ? "container__slider__links-small container__slider__links-small-active"
-                                    : "container__slider__links-small"
-                            }
-                            onClick={(e) => {
-                                e.preventDefault();
-                                setActiveIndex(index);
-                            }}
-                        ></button>
+                        >
+                            {item}
+                        </div>
                     );
                 })}
+
+
+
             </div>
 
-            <button
-                className="slider__btn-next"
-                onClick={(e) => {
-                    e.preventDefault();
-                    slideNext();
-                }}
-            >
-                {">"}
-            </button>
-            <button
-                className="slider__btn-prev"
-                onClick={(e) => {
-                    e.preventDefault();
-                    slidePrev();
-                }}
-            >
-                {"<"}
-            </button>
+            <div className="btnBx">
+              
+
+                <button
+                    className="slider__btn-prev"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        slidePrev();
+                    }}
+                >
+                    <i className='bx bx-left-arrow-alt'></i>
+                </button>
+                <div className="container__slider__links slider_links_con">
+                    {children.map((item, index) => {
+                        return (
+                            <button
+                                key={index}
+                                className={
+                                    activeIndex === index
+                                        ? "container__slider__links-small container__slider__links-small-active"
+                                        : "container__slider__links-small"
+                                }
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setActiveIndex(index);
+                                }}
+                            ></button>
+                        );
+                    })}
+                </div>
+                <button
+                    className="slider__btn-next"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        slideNext();
+                    }}
+                >
+                    <i className='bx bx-right-arrow-alt'></i>
+                </button>
+            </div>
         </div>
     );
 }

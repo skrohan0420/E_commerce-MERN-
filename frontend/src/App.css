@@ -82,7 +82,6 @@ body {
 	/*For animation dark mode*/
 	transition: .4s;
 }
-
 h1,
 h2,
 h3,
@@ -196,10 +195,6 @@ body.dark-theme {
 	background-color: var(--first-color);
 }
 
-/* =========== single product page ========== */
-.poduct-page{
-	margin-top: 80px;
-}
 
 /* ================= login ==================*/
 
