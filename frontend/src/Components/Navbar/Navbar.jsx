@@ -1,7 +1,17 @@
-import React from 'react'
+import React , {useState} from 'react'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
+    const [isActiveCart, setActiveCart] = useState(false);
+    const [isActiveNav, setActiveNav] = useState(false);
+
+    const handleClickCart = () => {
+        // Toggle the isActiveCart state on each click
+        setActiveCart(!isActiveCart);
+    };
+    const handleClickNav = () =>{
+        setActiveNav(!isActiveNav)
+    }
     return (
         <>
             {/* ========navbar=========== */}
@@ -11,7 +21,7 @@ function Navbar() {
                         <i className='bx bxs-watch nav__logo-icon'></i> Rolex
                     </a>
 
-                    <div className="nav__menu" id="nav-menu">
+                    <div className={`nav__menu ${isActiveNav ? 'show-menu' : ''}`} id="nav-menu">
                         <ul className="nav__list">
                             <li className="nav__item">
                                 <Link href="#home" className="nav__link active-link">Home</Link>
@@ -30,7 +40,7 @@ function Navbar() {
                             </li>
                         </ul>
 
-                        <div className="nav__close" id="nav-close">
+                        <div className="nav__close" id="nav-close" onClick={handleClickNav}>
                             <i className='bx bx-x' ></i>
                         </div>
                     </div>
@@ -40,11 +50,11 @@ function Navbar() {
                         <i className='bx bx-user change-theme' ></i>
                         <i className='bx bx-moon change-theme' id="theme-button"></i>
 
-                        <div className="nav__shop" id="cart-shop">
+                        <div className={`nav__shop`} id="cart-shop" onClick={handleClickCart}>
                             <i className='bx bx-shopping-bag' ></i>
                         </div>
 
-                        <div className="nav__toggle" id="nav-toggle">
+                        <div className="nav__toggle" id="nav-toggle" onClick={handleClickNav}>
                             <i className='bx bx-grid-alt' ></i>
                         </div>
                     </div>
@@ -53,8 +63,8 @@ function Navbar() {
 
 
             {/* side bar cart*/}
-            <div className="cart" id="cart">
-                <i className='bx bx-x cart__close' id="cart-close"></i>
+            <div className={`cart ${isActiveCart ? 'show-cart' : ''}`} id="cart">
+                <i className='bx bx-x cart__close' id="cart-close" onClick={handleClickCart}></i>
 
                 <h2 className="cart__title-center">My Cart</h2>
 

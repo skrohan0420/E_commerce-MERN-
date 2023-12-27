@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './UserReviewCard.css'
 function UserReviewCard() {
     return (
         <div className='user-review-bx'>
@@ -8,26 +8,23 @@ function UserReviewCard() {
             </div>
 
             <div className='rating-review'>
-                <span>
+                <h1>
                     Sk Rohan
-                </span>
-                <span className='stars-bx'>
+                </h1>
+                <p className='stars-bx'>
                     <i className='bx bxs-star'></i>
                     <i className='bx bxs-star'></i>
                     <i className='bx bxs-star'></i>
                     <i className='bx bxs-star'></i>
                     <i className='bx bxs-star'></i>
-                </span>
-                <span>
+                </p>
+                <p className='desc'>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati,
-                    assumenda nemo. Accusantium, animi ipsam porro perspiciatis expedita
-                    perferendis sequi debitis ipsum obcaecati, omnis necessitatibus vitae
-                    veniam quaerat maxime ullam fuga.
-                </span>
+                </p>
             </div>
 
             <div className='dateBx'>
-                <span>12 may</span>
+                <p>12 JAN</p>
             </div>
         </div>
     )

@@ -2,7 +2,7 @@
 .poduct-page{
 	margin: 90px 5rem 0px 5rem ;
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 .sliderBx{
     width: 100%;
@@ -13,4 +13,150 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+.product-details-bx{
+    border: 1px solid red;
+    width: 100%;
+    padding: 10px;
+}
+.product-title-price h1{
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+.product-price{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.reviewBx{
+    border: 1px solid red;
+    padding: 10px;
+    margin-top: 10px;
+}
+.reviewBx hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.revTitle{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.userRatingsBx{
+    display: flex;
+    gap : 10px;
+    flex-direction: column;
+}
+.slider-review{
+    width: 40%;
+
+}
+.details-similer{
+    width: 60%;
+}
+
+.product-act-btn-bx{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.product-act-btn-bx button{
+    height: 40px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.cartBtn{
+    background-color: white;
+    outline: 1px solid red;
+    font-weight: 500;
+    color: red;
+}
+.buyBtn{
+    background-color: red;
+    outline: 1px solid red;
+    font-weight: 500;
+    color: white;
+}
+.loveBtn{
+    background-color: white;
+    outline: 1px solid red;
+    font-weight: 500;
+    font-size: 20px;
+    color: red;
+}
+.product-type{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.product-del{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.product-desc{
+    margin-bottom: 10px;
+    text-align: justify;
+}
+.product-desc h3{
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.product-desc p{
+    font-size: 15px;
+}
+.product-points{
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+.product-points ul{
+    list-style: circle;
+    font-size: 15px;
+
+}
+
+.product-store h3{
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.product-storeBx{
+    outline: 1px solid red;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 5px;
+    border-radius: 5px;
+}
+.store-icon{
+    /* background-color: blue; */
+    font-size: 30px;
+}
+.star-bx i{
+    font-size: 10px;
+}
+.product-storeBx h2{
+    font-size: 12px;
+}
+.product-storeBx p{
+    font-size: 10px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+    .poduct-page{
+      flex-direction: column;
+      margin: 90px 1rem 0px 1rem ;
+    }
+    .slider-review{
+        width: 100%;
+    
+    }
+    .details-similer{
+        width: 100%;
+    }
 }

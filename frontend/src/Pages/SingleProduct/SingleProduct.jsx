@@ -48,7 +48,7 @@ function SingleProduct() {
 
                     <div className='reviewBx'>
 
-                        <h1>Reviews</h1>
+                        <h1 className='revTitle'>Reviews</h1>
 
                         <div className='ratingBx'>
                             <div>
@@ -69,6 +69,7 @@ function SingleProduct() {
 
                         <div className='userRatingsBx'>
                            <UserReviewCard />
+                           <UserReviewCard />
                         </div>
                     </div>
                 </div>
@@ -79,35 +80,34 @@ function SingleProduct() {
 
                     <div className='product-details-bx'>
                         <div className='product-title-price'>
-                            <h1>Some Poduct</h1>
-                            <span className='product-price'>$3,444</span>
+                            <h1>Poduct Name</h1>
+                            <p className='product-price'>$ 3,444</p>
                         </div>
                         <div className='product-act-btn-bx'>
-                            <button>Add to Cart</button>
-                            <button>Buy it Now</button>
-                            <button>
+                            <button className='cartBtn'>Add to Cart</button>
+                            <button className='buyBtn'>Buy it Now</button>
+                            <button className='loveBtn'>
                                 <i className='bx bxs-heart'></i>
-                                
                             </button>
                         </div>
                         <hr />
 
                         <div className='product-spec-bx'>
 
-                            <div>
-                                <span>
+                            <div className='product-type'>
+                                <p>
                                     Color: blue
-                                </span>
+                                </p>
                             </div>
 
-                            <div>
-                                <span>
+                            <div className='product-del'>
+                                <p>
                                     <i className='bx bxs-calendar'></i>
                                     Delivery from sweden, 15-45 days
-                                </span>
+                                </p>
                             </div>
 
-                            <div>
+                            <div className='product-desc'>
                                 <h3>Description</h3>
                                 <p>
                                     The minimalist collaboration features chairs, 
@@ -118,7 +118,7 @@ function SingleProduct() {
                                 </p>
                             </div>
 
-                            <div>
+                            <div className='product-points'>
                                 <ul>
                                     <li>Best in Quality</li>
                                     <li>Sturdy laminate surfaces</li>
@@ -128,12 +128,12 @@ function SingleProduct() {
                                 </ul>
                             </div>
 
-                            <div>
-                                <h4>Store</h4>
-                                <div>
-                                    <i className='bx bxs-store'></i>
+                            <div className='product-store'>
+                                <h3>Store</h3>
+                                <div className='product-storeBx'>
+                                    <i className='bx bxs-store store-icon'></i>
                                     <div>
-                                        <div>
+                                        <div className='star-bx'>
                                             <i className='bx bxs-star'></i>
                                             <i className='bx bxs-star'></i>
                                             <i className='bx bxs-star'></i>

@@ -1,0 +1,41 @@
+.user-review-bx{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid red;
+    /* height: 100%; */
+}
+
+.userImgBx {
+    object-fit: contain;
+    min-height: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    background-color: red;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.rating-review h1{
+    font-size: 18px;
+}
+.rating-review .desc{
+    font-size: 13px;
+} 
+.dateBx{
+    font-size: 10px;
+    width: 150px;
+    /* background-color: red; */
+    font-weight: 500;
+    text-align: right;
+    height: 100%;
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: flex-end;
+}
+.dateBx p{
+    height: 100%;
+}
