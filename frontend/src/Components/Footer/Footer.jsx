@@ -10,8 +10,8 @@ function Footer() {
                         <h3 className="footer__title">Our information</h3>
 
                         <ul className="footer__list">
-                            <li>1234 - Peru</li>
-                            <li>La Libertad 43210</li>
+                            <li>1234 - india</li>
+                            <li>west bengal 43210</li>
                             <li>123-456-789</li>
                         </ul>
                     </div>
@@ -72,7 +72,7 @@ function Footer() {
                     </div>
                 </div>
 
-                <span className="footer__copy">&#169; Bedimcode. All rigths reserved</span>
+                <span className="footer__copy">&#169; SK ROHAN ALI. All rigths reserved</span>
             </footer>
 
             {/* =============== SCROLL UP =============== */}
