@@ -32,129 +32,128 @@ function SingleProduct() {
 
 
     return (
-        <>
-            <Navbar />
-            <div className='main poduct-page'>
-                <div className='slider-review'>
-                    <div className='sliderBxCon'>
-                        <div className='sliderBx'>
-                            <ImageSlider>
-                                {images.map((image, index) => {
-                                    return <img key={index} src={image.imgURL} alt={image.imgAlt} />;
-                                })}
-                            </ImageSlider>
-                        </div>
-                    </div>
 
-                    <div className='reviewBx'>
 
-                        <h1 className='revTitle'>Reviews</h1>
-
-                        <div className='ratingBx'>
-                            <div>
-                                <span className='stars-bx'>
-                                    <i className='bx bxs-star'></i>
-                                    <i className='bx bxs-star'></i>
-                                    <i className='bx bxs-star'></i>
-                                    <i className='bx bxs-star'></i>
-                                    <i className='bx bxs-star'></i>
-                                </span>
-                                <span className='rating-text'>
-                                    4.6
-                                </span>
-                            </div>
-                        </div>
-
-                        <hr />
-
-                        <div className='userRatingsBx'>
-                           <UserReviewCard />
-                           <UserReviewCard />
-                        </div>
+        <div className='main poduct-page'>
+            <div className='slider-review'>
+                <div className='sliderBxCon'>
+                    <div className='sliderBx'>
+                        <ImageSlider>
+                            {images.map((image, index) => {
+                                return <img key={index} src={image.imgURL} alt={image.imgAlt} />;
+                            })}
+                        </ImageSlider>
                     </div>
                 </div>
 
-                
-                <div className='details-similer'>
+                <div className='reviewBx'>
 
+                    <h1 className='revTitle'>Reviews</h1>
 
-                    <div className='product-details-bx'>
-                        <div className='product-title-price'>
-                            <h1>Poduct Name</h1>
-                            <p className='product-price'>$ 3,444</p>
+                    <div className='ratingBx'>
+                        <div>
+                            <span className='stars-bx'>
+                                <i className='bx bxs-star'></i>
+                                <i className='bx bxs-star'></i>
+                                <i className='bx bxs-star'></i>
+                                <i className='bx bxs-star'></i>
+                                <i className='bx bxs-star'></i>
+                            </span>
+                            <span className='rating-text'>
+                                4.6
+                            </span>
                         </div>
-                        <div className='product-act-btn-bx'>
-                            <button className='cartBtn'>Add to Cart</button>
-                            <button className='buyBtn'>Buy it Now</button>
-                            <button className='loveBtn'>
-                                <i className='bx bxs-heart'></i>
-                            </button>
-                        </div>
-                        <hr />
-
-                        <div className='product-spec-bx'>
-
-                            <div className='product-type'>
-                                <p>
-                                    Color: blue
-                                </p>
-                            </div>
-
-                            <div className='product-del'>
-                                <p>
-                                    <i className='bx bxs-calendar'></i>
-                                    Delivery from sweden, 15-45 days
-                                </p>
-                            </div>
-
-                            <div className='product-desc'>
-                                <h3>Description</h3>
-                                <p>
-                                    The minimalist collaboration features chairs, 
-                                    lightening, Shelves, Sofas, Desks and various home accessories,
-                                    all offering form and function at the same point.We use high-strength 
-                                    lamps and joinery techniques specially designed for engineered wood beds. 
-                                    Ergo, no irksome creaks - and you can sleep like a baby, well into adulthood!
-                                </p>
-                            </div>
-
-                            <div className='product-points'>
-                                <ul>
-                                    <li>Best in Quality</li>
-                                    <li>Sturdy laminate surfaces</li>
-                                    <li>Relocation friendly design</li>
-                                    <li>High gloss, high style</li>
-                                    <li>Easy-access hydraulic storage</li>
-                                </ul>
-                            </div>
-
-                            <div className='product-store'>
-                                <h3>Store</h3>
-                                <div className='product-storeBx'>
-                                    <i className='bx bxs-store store-icon'></i>
-                                    <div>
-                                        <div className='star-bx'>
-                                            <i className='bx bxs-star'></i>
-                                            <i className='bx bxs-star'></i>
-                                            <i className='bx bxs-star'></i>
-                                            <i className='bx bxs-star'></i>
-                                            <i className='bx bxs-star'></i>
-                                        </div>
-                                        <h2>Rare Boutique</h2>
-                                        <p>25K Followers</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
                     </div>
 
+                    <hr />
 
+                    <div className='userRatingsBx'>
+                        <UserReviewCard />
+                        <UserReviewCard />
+                    </div>
                 </div>
             </div>
-            <Footer />
-        </>
+
+
+            <div className='details-similer'>
+
+
+                <div className='product-details-bx'>
+                    <div className='product-title-price'>
+                        <h1>Poduct Name</h1>
+                        <p className='product-price'>$ 3,444</p>
+                    </div>
+                    <div className='product-act-btn-bx'>
+                        <button className='cartBtn'>Add to Cart</button>
+                        <button className='buyBtn'>Buy it Now</button>
+                        <button className='loveBtn'>
+                            <i className='bx bxs-heart'></i>
+                        </button>
+                    </div>
+                    <hr />
+
+                    <div className='product-spec-bx'>
+
+                        <div className='product-type'>
+                            <p>
+                                Color: blue
+                            </p>
+                        </div>
+
+                        <div className='product-del'>
+                            <p>
+                                <i className='bx bxs-calendar'></i>
+                                Delivery from sweden, 15-45 days
+                            </p>
+                        </div>
+
+                        <div className='product-desc'>
+                            <h3>Description</h3>
+                            <p>
+                                The minimalist collaboration features chairs,
+                                lightening, Shelves, Sofas, Desks and various home accessories,
+                                all offering form and function at the same point.We use high-strength
+                                lamps and joinery techniques specially designed for engineered wood beds.
+                                Ergo, no irksome creaks - and you can sleep like a baby, well into adulthood!
+                            </p>
+                        </div>
+
+                        <div className='product-points'>
+                            <ul>
+                                <li>Best in Quality</li>
+                                <li>Sturdy laminate surfaces</li>
+                                <li>Relocation friendly design</li>
+                                <li>High gloss, high style</li>
+                                <li>Easy-access hydraulic storage</li>
+                            </ul>
+                        </div>
+
+                        <div className='product-store'>
+                            <h3>Store</h3>
+                            <div className='product-storeBx'>
+                                <i className='bx bxs-store store-icon'></i>
+                                <div>
+                                    <div className='star-bx'>
+                                        <i className='bx bxs-star'></i>
+                                        <i className='bx bxs-star'></i>
+                                        <i className='bx bxs-star'></i>
+                                        <i className='bx bxs-star'></i>
+                                        <i className='bx bxs-star'></i>
+                                    </div>
+                                    <h2>Rare Boutique</h2>
+                                    <p>25K Followers</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
     )
 }
 

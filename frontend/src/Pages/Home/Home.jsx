@@ -6,8 +6,7 @@ function Home() {
 
 
 	return (
-		<>
-			<Navbar />
+	
 			<main className="main">
 				{/* ============Home============ */}
 				<section className="home" id="home">
@@ -91,9 +90,6 @@ function Home() {
 					</div>
 				</section>
 			</main>
-			<Footer />
-
-		</>
 	)
 }
 
