@@ -1,15 +1,18 @@
-import React , {useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import { DarkModeContext } from '../../Context/darkModeContext';
+import { useContext } from 'react';
 function Navbar() {
     const [isActiveCart, setActiveCart] = useState(false);
     const [isActiveNav, setActiveNav] = useState(false);
+    const { toggle, darkMode } = useContext(DarkModeContext);
+
 
     const handleClickCart = () => {
         // Toggle the isActiveCart state on each click
         setActiveCart(!isActiveCart);
     };
-    const handleClickNav = () =>{
+    const handleClickNav = () => {
         setActiveNav(!isActiveNav)
     }
     return (
@@ -32,12 +35,6 @@ function Navbar() {
                             <li className="nav__item">
                                 <Link href="#products" className="nav__link">Products</Link>
                             </li>
-                            <li className="nav__item">
-                                <Link to={'log-in'} className="nav__link">New</Link>
-                            </li>
-                            <li className="nav__item">
-                                <Link to={'log-in'} className="nav__link">login</Link>
-                            </li>
                         </ul>
 
                         <div className="nav__close" id="nav-close" onClick={handleClickNav}>
@@ -48,7 +45,7 @@ function Navbar() {
                     <div className="nav__btns">
                         {/* Theme change button  */}
                         <i className='bx bx-user change-theme' ></i>
-                        <i className='bx bx-moon change-theme' id="theme-button"></i>
+                        <i className={darkMode ? `bx bx-sun change-theme` : `bx bx-moon change-theme`} onClick={toggle}></i>
 
                         <div className={`nav__shop`} id="cart-shop" onClick={handleClickCart}>
                             <i className='bx bx-shopping-bag' ></i>

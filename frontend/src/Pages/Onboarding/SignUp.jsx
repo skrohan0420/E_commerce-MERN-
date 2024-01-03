@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function SignUp() {
     return (
         <>
-        <Navbar />
+
 
         <section className='login-page'>
             <div className="signin">
@@ -38,7 +38,6 @@ function SignUp() {
             </div>
         </section>
 
-        <Footer />
 
     </>
             )
