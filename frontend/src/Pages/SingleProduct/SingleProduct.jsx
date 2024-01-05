@@ -1,11 +1,14 @@
 import React from 'react'
-import Navbar from '../../Components/Navbar/Navbar'
-import Footer from '../../Components/Footer/Footer'
 import ImageSlider from '../../Components/Slider/ImageSlider';
 import './SingleProduct.css'
 import UserReviewCard from '../../Components/Card/UserReviewCard';
+import { DarkModeContext } from '../../Context/darkModeContext';
+import { useContext } from 'react';
+import { theme } from '../../Config/theme';
 
 function SingleProduct() {
+	const {darkMode } = useContext(DarkModeContext);
+
     const images = [
         {
             imgURL:
@@ -34,7 +37,7 @@ function SingleProduct() {
     return (
 
 
-        <div className='main poduct-page'>
+        <div className='main poduct-page'  style={{backgroundColor: darkMode ? theme.dark.bg : theme.light.bg}}>
             <div className='slider-review'>
                 <div className='sliderBxCon'>
                     <div className='sliderBx'>

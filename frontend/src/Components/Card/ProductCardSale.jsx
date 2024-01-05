@@ -1,10 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { DarkModeContext } from '../../Context/darkModeContext';
+import { useContext } from 'react';
+import { theme } from '../../Config/theme';
 
 function ProductCardSale() {
+
+	const {darkMode } = useContext(DarkModeContext);
+
 	return (
-		<Link to="/product/1">
-			<article className="featured__card">
+		<Link to="/product/1" >
+			<article className="featured__card" style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
 				<span className="featured__tag">Sale</span>
 
 				<img src={`${process.env.PUBLIC_URL}/assets/img/home.png`} alt="" className="featured__img" />

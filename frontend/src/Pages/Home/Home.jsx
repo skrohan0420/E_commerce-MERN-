@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../../Components/Navbar/Navbar'
 import ProductCardSale from '../../Components/Card/ProductCardSale'
-import Footer from '../../Components/Footer/Footer';
+import { DarkModeContext } from '../../Context/darkModeContext';
+import { useContext } from 'react';
+import { theme } from '../../Config/theme';
+
+
+
+
+
+
 function Home() {
+	const {darkMode } = useContext(DarkModeContext);
 
 
 	return (
 	
-			<main className="main">
+			<main className="main" style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
 				{/* ============Home============ */}
-				<section className="home" id="home">
+				<section className="home" id="home" >
 					<div className="home__container container grid">
 						<div className="home__img-bg">
 							<img src={`${process.env.PUBLIC_URL}/assets/img/home.png`} alt="" className="home__img" />

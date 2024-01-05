@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { DarkModeContext } from '../../Context/darkModeContext';
 import { useContext } from 'react';
+import { theme } from '../../Config/theme';
+
 function Navbar() {
     const [isActiveCart, setActiveCart] = useState(false);
     const [isActiveNav, setActiveNav] = useState(false);
@@ -18,7 +20,7 @@ function Navbar() {
     return (
         <>
             {/* ========navbar=========== */}
-            <header className="header" id="header" >
+            <header className="header" id="header" style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg``}}>
                 <nav className="nav container">
                     <a href="#" className="nav__logo">
                         <i className='bx bxs-watch nav__logo-icon'></i> Rolex
