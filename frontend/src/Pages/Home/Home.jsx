@@ -15,7 +15,7 @@ function Home() {
 
 	return (
 	
-			<main className="main" style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
+			<main className="main" style={{backgroundColor: darkMode ? theme.dark.bg : theme.light.bg}}>
 				{/* ============Home============ */}
 				<section className="home" id="home" >
 					<div className="home__container container grid">
@@ -36,7 +36,7 @@ function Home() {
 						</div>
 
 						<div className="home__data">
-							<h1 className="home__title">NEW WATCH <br /> COLLECTIONS B720</h1>
+							<h1 className="home__title" style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>NEW WATCH <br /> COLLECTIONS B720</h1>
 							<p className="home__description">
 								Latest arrival of the new imported watches of the B720 series,
 								with a modern and resistant design.
@@ -58,7 +58,7 @@ function Home() {
 
 				{/* ============FEATURED============ */}
 				<section className="featured section container" id="featured">
-					<h2 className="section__title">
+					<h2 className="section__title" style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>
 						Featured
 					</h2>
 
@@ -75,11 +75,11 @@ function Home() {
 				<section className="story section container">
 					<div className="story__container grid">
 						<div className="story__data">
-							<h2 className="section__title story__section-title">
+							<h2 className="section__title story__section-title" style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>
 								Our Story
 							</h2>
 
-							<h1 className="story__title">
+							<h1 className="story__title" style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>
 								Inspirational Watch of <br /> this year
 							</h1>
 

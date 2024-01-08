@@ -1,13 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { DarkModeContext } from '../../Context/darkModeContext';
+import { useContext } from 'react';
+import { theme } from '../../Config/theme';
+
+
 function Footer() {
+
+	const {darkMode } = useContext(DarkModeContext);
+
     return (
         <>
             {/* ==================== FOOTER ==================== */}
-            <footer className="footer section">
+            <footer className="footer section" style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
                 <div className="footer__container container grid">
                     <div className="footer__content">
-                        <h3 className="footer__title">Our information</h3>
+                        <h3 className="footer__title" style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>Our information</h3>
 
                         <ul className="footer__list">
                             <li>1234 - india</li>
@@ -16,11 +24,11 @@ function Footer() {
                         </ul>
                     </div>
                     <div className="footer__content">
-                        <h3 className="footer__title">About Us</h3>
+                        <h3 className="footer__title" style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>About Us</h3>
 
                         <ul className="footer__links">
                             <li>
-                                <a href="#" className="footer__link">Support Center</a>
+                                <a href="#" className="footer__link" >Support Center</a>
                             </li>
                             <li>
                                 <a href="#" className="footer__link">Customer Support</a>
@@ -35,7 +43,7 @@ function Footer() {
                     </div>
 
                     <div className="footer__content">
-                        <h3 className="footer__title">Product</h3>
+                        <h3 className="footer__title" style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>Product</h3>
 
                         <ul className="footer__links">
                             <li>
@@ -54,7 +62,7 @@ function Footer() {
                     </div>
 
                     <div className="footer__content">
-                        <h3 className="footer__title">Social</h3>
+                        <h3 className="footer__title" style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>Social</h3>
 
                         <ul className="footer__social">
                             <a href="https://www.facebook.com/" target="_blank" className="footer__social-link">

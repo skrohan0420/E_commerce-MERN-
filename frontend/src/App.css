@@ -6,7 +6,7 @@
 	--header-height: 3.5rem;
 
 	/*========== Colors ==========*/
-	--first-color: rgba(3, 60 ,76,1);
+	--first-color: #ff5001;
 	--first-color-light: rgba(3 ,60 ,76, 0.4);
 	--button-color: hsl(0, 0%, 17%);
 	--button-color-alt: hsl(0, 0%, 21%);
@@ -600,6 +600,7 @@ input[type="submit"]:active {
 	transform: translateY(10rem);
 	opacity: 0;
 	transition: 0.3s;
+	background-color: #000000;
 }
 
 .featured__card:hover {
@@ -941,7 +942,7 @@ input[type="submit"]:active {
 }
 
 .footer__link:hover {
-	color: var(--title-color);
+	color: var(--first-color);
 }
 
 .footer__social {
@@ -955,7 +956,7 @@ input[type="submit"]:active {
 }
 
 .footer__social-link:hover {
-	color: var(--title-color);
+	color: var(--first-color);
 }
 
 .footer__copy {

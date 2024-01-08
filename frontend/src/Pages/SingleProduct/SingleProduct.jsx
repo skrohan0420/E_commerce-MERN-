@@ -38,8 +38,8 @@ function SingleProduct() {
 
 
         <div className='main poduct-page'  style={{backgroundColor: darkMode ? theme.dark.bg : theme.light.bg}}>
-            <div className='slider-review'>
-                <div className='sliderBxCon'>
+            <div className='slider-review' >
+                <div className='sliderBxCon' style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
                     <div className='sliderBx'>
                         <ImageSlider>
                             {images.map((image, index) => {
@@ -49,7 +49,7 @@ function SingleProduct() {
                     </div>
                 </div>
 
-                <div className='reviewBx'>
+                <div className='reviewBx' style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
 
                     <h1 className='revTitle'>Reviews</h1>
 
@@ -70,7 +70,7 @@ function SingleProduct() {
 
                     <hr />
 
-                    <div className='userRatingsBx'>
+                    <div className='userRatingsBx' > 
                         <UserReviewCard />
                         <UserReviewCard />
                     </div>
@@ -78,10 +78,10 @@ function SingleProduct() {
             </div>
 
 
-            <div className='details-similer'>
+            <div className='details-similer' >
 
 
-                <div className='product-details-bx'>
+                <div className='product-details-bx' style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
                     <div className='product-title-price'>
                         <h1>Poduct Name</h1>
                         <p className='product-price'>$ 3,444</p>

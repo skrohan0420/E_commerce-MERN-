@@ -1,8 +1,14 @@
 import React from 'react'
 import './UserReviewCard.css'
+import { DarkModeContext } from '../../Context/darkModeContext';
+import { useContext } from 'react';
+import { theme } from '../../Config/theme';
+
 function UserReviewCard() {
+	const {darkMode } = useContext(DarkModeContext);
+
     return (
-        <div className='user-review-bx'>
+        <div className='user-review-bx' style={{backgroundColor: darkMode ? theme.dark.bg : theme.light.bg}}>
             <div className='userImgBx'>
                 <img src="https://eliteadmin.themedesigner.in/demos/bt4/assets/images/users/1.jpg" alt="" />
             </div>
