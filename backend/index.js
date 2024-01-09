@@ -8,7 +8,7 @@ mongoDB();
 
 
 app.use((req,res,next)=>{
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3001")
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5000")
     res.header(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept"
@@ -17,6 +17,9 @@ app.use((req,res,next)=>{
 })
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
+app.use('/api', require('./routes/auth'))
+
+
 
 app.get('/',(req, res) =>{
     res.send('works')

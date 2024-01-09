@@ -447,7 +447,12 @@ input[type="submit"]:active {
 .active-link {
 	color: var(--first-color);
 }
-
+.userImg{
+	width: fit-content;
+	/* background-color: red; */
+	margin: auto;
+	margin-bottom: 10px;
+}
 /*=============== HOME ===============*/
 .home__container {
 	position: relative;

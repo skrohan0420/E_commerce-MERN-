@@ -9,6 +9,7 @@ import CartItems from '../../Components/CartItems/CartItems'
 function Navbar() {
     const [isActiveCart, setActiveCart] = useState(false);
     const [isActiveNav, setActiveNav] = useState(false);
+    const [isActiveUserSideBar, setActiveUserSideBar] = useState(false);
     const { toggle, darkMode } = useContext(DarkModeContext);
 
 
@@ -18,6 +19,9 @@ function Navbar() {
     };
     const handleClickNav = () => {
         setActiveNav(!isActiveNav)
+    }
+    const handleClickUserSideBar = () => {
+        setActiveUserSideBar(!isActiveUserSideBar)
     }
     return (
         <>
@@ -48,7 +52,7 @@ function Navbar() {
 
                     <div className="nav__btns">
                         {/* Theme change button  */}
-                        <i className='bx bx-user change-theme' style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}></i>
+                        <i className='bx bx-user change-theme' style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}} onClick={handleClickUserSideBar}></i>
                         <i className={darkMode ? `bx bx-sun change-theme` : `bx bx-moon change-theme`} style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}onClick={toggle}></i>
 
                         <div className={`nav__shop`} id="cart-shop" onClick={handleClickCart}>
@@ -87,8 +91,17 @@ function Navbar() {
                 </div>
             </div>
 
+
             {/* user details sidebar*/}
-          
+            <div className={`cart ${isActiveUserSideBar ? 'show-cart' : ''}`} style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
+                <i className='bx bx-x cart__close '  onClick={handleClickUserSideBar} style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}></i>
+                <div className="cart__box userImg"  style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
+                    <img src={`${process.env.PUBLIC_URL}/assets/img/featured1.png`} alt="" className="cart__img " />
+                </div>
+                <h2 className="cart__title-center" style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>Sk Rohan</h2>
+
+            
+            </div>
         </>
     )
 }
