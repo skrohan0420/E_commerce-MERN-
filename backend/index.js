@@ -15,14 +15,14 @@ app.use((req,res,next)=>{
     )
     next()
 })
-app.use(express.json())
+app.use(express.json({ type: '*/*' }))
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', require('./routes/auth'))
 
 
 
 app.get('/',(req, res) =>{
-    res.send('works')
+    res.send('running')
 })
 app.listen(port, ()=>{
     console.log(port)

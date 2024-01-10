@@ -1,15 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const { body, validationResult } = require('express-validator');
+const { body } = require('express-validator');
+const userController = require('../controllers/users')
 
-router.post('/create-user',express.json({ type: '*/*' }),[
+const signUpValidation = [
     body('name').isLength({ min: 3 }),
     body('email').isEmail(),
     body('password').isLength({ min: 6 })
-],
-async (req, res) => {
-    res.json({"log": req.body.name})
-    console.log(validationResult(req))
-})
+]
+const logInValidation =  [
+    body('email').isEmail(),
+    body('password').isLength({ min: 6 })
+]
+router.post('/create-user',signUpValidation,userController.createUser)
+router.post('/log-in', logInValidation, userController.logIn)
 
 module.exports = router;
