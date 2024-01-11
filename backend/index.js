@@ -17,7 +17,7 @@ app.use((req,res,next)=>{
 })
 app.use(express.json({ type: '*/*' }))
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', require('./routes/auth'))
+app.use('/api/user', require('./routes/auth'))
 
 
 
