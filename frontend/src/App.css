@@ -547,7 +547,13 @@ input[type="submit"]:active {
 .button--small {
 	padding: 1rem 1.5rem;
 }
+.logout-btn{
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
 
+}
 /*=============== FEATURED ===============*/
 .featured__container {
 	row-gap: 2.5rem;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { DarkModeContext } from '../../Context/darkModeContext';
 import { useContext } from 'react';
 import { theme } from '../../Config/theme';
@@ -23,6 +23,12 @@ function Navbar() {
     const handleClickUserSideBar = () => {
         setActiveUserSideBar(!isActiveUserSideBar)
     }
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem('authToken')
+        localStorage.removeItem('darkMode')
+        navigate('/log-in')
+    }
     return (
         <>
             {/* ========navbar=========== */}
@@ -32,7 +38,7 @@ function Navbar() {
                         <i className='bx bxs-watch nav__logo-icon' ></i> Rolex
                     </a>
 
-                    <div className={`nav__menu ${isActiveNav ? 'show-menu' : ''}`} id="nav-menu">
+                    <div className={`nav__menu ${isActiveNav ? 'show-menu' : ''}`} id="nav-menu" style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
                         <ul className="nav__list" >
                             <li className="nav__item" >
                                 <Link href="#home" className="nav__link " style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>Home</Link>
@@ -100,7 +106,9 @@ function Navbar() {
                 </div>
                 <h2 className="cart__title-center" style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>Sk Rohan</h2>
 
-            
+                <button className="button logout-btn button--gray" onClick={handleLogout}>
+                    Log-out
+                </button>
             </div>
         </>
     )

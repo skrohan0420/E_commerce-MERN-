@@ -7,8 +7,9 @@ mongoDB();
 
 
 
-app.use((req,res,next)=>{
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5000")
+
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", process.env.FRONTND_URL)
     res.header(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept"
@@ -21,9 +22,9 @@ app.use('/api/user', require('./routes/auth'))
 
 
 
-app.get('/',(req, res) =>{
+app.get('/', (req, res) => {
     res.send('running')
 })
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log(port)
 })

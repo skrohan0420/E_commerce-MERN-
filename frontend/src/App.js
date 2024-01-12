@@ -11,16 +11,15 @@ import {
 	Outlet,
 	RouterProvider,
 } from "react-router-dom";
-import { AuthContextProvider } from './Context/authContext';
 import { DarkModeContextProvider } from './Context/darkModeContext';
 
 function App() {
-	let currentUser = true;
+	let currentUser = localStorage.getItem('authToken')
 	const ProtectedRoute = ({ children }) => {
-		if (!currentUser) {
-			return <Navigate to="/log-in" />
+		if (currentUser) {
+			return children
 		}
-		return children
+		return <Navigate to="/log-in" />
 	}
 	const Layout = () => {
 		return (
@@ -62,11 +61,9 @@ function App() {
 	]);
 
 	return (
-		<AuthContextProvider>
-			<DarkModeContextProvider>
-				<RouterProvider router={router} />
-			</DarkModeContextProvider>
-		</AuthContextProvider>
+		<DarkModeContextProvider>
+			<RouterProvider router={router} />
+		</DarkModeContextProvider>
 	);
 }
 
