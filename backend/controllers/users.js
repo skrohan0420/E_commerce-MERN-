@@ -33,10 +33,10 @@ const createUser = async (req, res) => {
             });
             UsersDetails.save()
                 .then(result => {
-                    res.json({ 'success': true })
+                    res.json({ 'success': true , "message": "user added"})
                 })
                 .catch(err => {
-                    res.json({ 'success': false })
+                    res.json({ 'success': false , 'message': "cannot save user"})
                 });
         }
     } else {
@@ -55,7 +55,7 @@ const logIn = async (req, res) => {
                     }
                 }
                 const authToken = jwt.sign(data, process.env.JWT_SECRET)
-                res.json({ success: true, message: 'user found', authToken: authToken });
+                res.json({ success: true, message: 'user found', authToken: authToken, userId: result.id });
             } else {
                 res.json({ success: false, message: 'user not found' });
             }
@@ -91,5 +91,6 @@ const getUserById = async (req, res) => {
 module.exports = {
     createUser,
     logIn,
-    getUserById
+    getUserById,
+    isUserByEmail
 }

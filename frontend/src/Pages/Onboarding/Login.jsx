@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import {url} from '../../Config/url'
-
+import { url } from '../../Config/url'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
     const [userData, setUserData] = useState({
         "email": "",
         "password": ""
     })
-
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -29,9 +29,13 @@ function Login() {
 
             if (json.success) {
                 localStorage.setItem("authToken", json.authToken)
+                localStorage.setItem("userId", json.userId)
+                console.log(json)
                 navigate('/')
             } else {
-                alert('Wrong Email or Password')
+                toast.error('Wrong Email or Password', {
+                    position: "top-center",
+                })
             }
         } catch (err) {
             console.log(err)
@@ -50,6 +54,7 @@ function Login() {
 
 
             <section className='login-page'>
+                <ToastContainer />
                 <div className="signin">
                     <div className="content">
                         <h2>Sign In</h2>

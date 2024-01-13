@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { DarkModeContext } from '../../Context/darkModeContext';
 import { useContext } from 'react';
@@ -32,6 +32,7 @@ function Navbar() {
     const handleLogout = () => {
         localStorage.removeItem('authToken')
         localStorage.removeItem('darkMode')
+        localStorage.removeItem('userId')
         navigate('/log-in')
     }
     return (
