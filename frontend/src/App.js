@@ -12,9 +12,11 @@ import {
 	RouterProvider,
 } from "react-router-dom";
 import { DarkModeContextProvider } from './Context/darkModeContext';
+import { useEffect } from 'react';
 
 function App() {
 	let currentUser = localStorage.getItem('authToken')
+
 	const ProtectedRoute = ({ children }) => {
 		if (currentUser) {
 			return children

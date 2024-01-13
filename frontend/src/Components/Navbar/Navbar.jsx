@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { DarkModeContext } from '../../Context/darkModeContext';
 import { useContext } from 'react';
@@ -11,7 +11,12 @@ function Navbar() {
     const [isActiveNav, setActiveNav] = useState(false);
     const [isActiveUserSideBar, setActiveUserSideBar] = useState(false);
     const { toggle, darkMode } = useContext(DarkModeContext);
-
+    let currentUser = localStorage.getItem('authToken')
+    useEffect(()=>{
+        if (!currentUser) {
+            navigate('/log-in')
+		}
+    }, [])
 
     const handleClickCart = () => {
         // Toggle the isActiveCart state on each click
