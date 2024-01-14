@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ImageSlider from '../../Components/Slider/ImageSlider';
 import './SingleProduct.css'
 import UserReviewCard from '../../Components/Card/UserReviewCard';
 import { DarkModeContext } from '../../Context/darkModeContext';
 import { useContext } from 'react';
 import { theme } from '../../Config/theme';
+import ReactSimplyCarousel from 'react-simply-carousel';
+import ProductCardSimilar from '../../Components/Card/ProductCardSimilar'
 
 function SingleProduct() {
-	const {darkMode } = useContext(DarkModeContext);
+    const { darkMode } = useContext(DarkModeContext);
 
     const images = [
         {
@@ -32,14 +34,14 @@ function SingleProduct() {
         }
 
     ];
-
+    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     return (
 
 
-        <div className='main poduct-page'  style={{backgroundColor: darkMode ? theme.dark.bg : theme.light.bg}}>
+        <div className='main poduct-page' style={{ backgroundColor: darkMode ? theme.dark.bg : theme.light.bg }}>
             <div className='slider-review' >
-                <div className='sliderBxCon' style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
+                <div className='sliderBxCon' style={{ backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg }}>
                     <div className='sliderBx'>
                         <ImageSlider>
                             {images.map((image, index) => {
@@ -49,13 +51,13 @@ function SingleProduct() {
                     </div>
                 </div>
 
-                <div className='reviewBx' style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
+                <div className='reviewBx' style={{ backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg }}>
 
-                    <h1 className='revTitle'>Reviews</h1>
+                    <h1 className='revTitle' style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>Reviews</h1>
 
                     <div className='ratingBx'>
-                        <div>
-                            <span className='stars-bx'>
+                        <div style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>
+                            <span className='stars-bx' >
                                 <i className='bx bxs-star'></i>
                                 <i className='bx bxs-star'></i>
                                 <i className='bx bxs-star'></i>
@@ -70,7 +72,7 @@ function SingleProduct() {
 
                     <hr />
 
-                    <div className='userRatingsBx' > 
+                    <div className='userRatingsBx' >
                         <UserReviewCard />
                         <UserReviewCard />
                     </div>
@@ -81,14 +83,16 @@ function SingleProduct() {
             <div className='details-similer' >
 
 
-                <div className='product-details-bx' style={{backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg}}>
-                    <div className='product-title-price'>
-                        <h1>Poduct Name</h1>
-                        <p className='product-price'>$ 3,444</p>
+                <div className='product-details-bx' style={{ backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg }}>
+                    <div className='product-title-price' >
+                        <h1 style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>Poduct Name</h1>
+                        <p style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }} className='product-price'>$ 3,444</p>
                     </div>
-                    <div className='product-act-btn-bx'>
-                        <button className='cartBtn'>Add to Cart</button>
-                        <button className='buyBtn'>Buy it Now</button>
+                    <div className='product-act-btn-bx' >
+                        <button className='buyBtn' >Buy it Now</button>
+                        <button className='cartBtn '>
+                            <i className='bx bxs-cart'></i>
+                        </button>
                         <button className='loveBtn'>
                             <i className='bx bxs-heart'></i>
                         </button>
@@ -97,32 +101,34 @@ function SingleProduct() {
 
                     <div className='product-spec-bx'>
 
-                        <div className='product-type'>
+                        <div className='product-type' style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>
                             <p>
                                 Color: blue
                             </p>
                         </div>
 
                         <div className='product-del'>
-                            <p>
+                            <p style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>
                                 <i className='bx bxs-calendar'></i>
                                 Delivery from sweden, 15-45 days
                             </p>
                         </div>
 
                         <div className='product-desc'>
-                            <h3>Description</h3>
-                            <p>
+                            <h3 style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>Description</h3>
+                            <p style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>
+
                                 The minimalist collaboration features chairs,
                                 lightening, Shelves, Sofas, Desks and various home accessories,
                                 all offering form and function at the same point.We use high-strength
                                 lamps and joinery techniques specially designed for engineered wood beds.
                                 Ergo, no irksome creaks - and you can sleep like a baby, well into adulthood!
+
                             </p>
                         </div>
 
                         <div className='product-points'>
-                            <ul>
+                            <ul style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>
                                 <li>Best in Quality</li>
                                 <li>Sturdy laminate surfaces</li>
                                 <li>Relocation friendly design</li>
@@ -132,8 +138,8 @@ function SingleProduct() {
                         </div>
 
                         <div className='product-store'>
-                            <h3>Store</h3>
-                            <div className='product-storeBx'>
+                            <h3 style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>Store</h3>
+                            <div className='product-storeBx' style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>
                                 <i className='bx bxs-store store-icon'></i>
                                 <div>
                                     <div className='star-bx'>
@@ -143,7 +149,7 @@ function SingleProduct() {
                                         <i className='bx bxs-star'></i>
                                         <i className='bx bxs-star'></i>
                                     </div>
-                                    <h2>Rare Boutique</h2>
+                                    <h2 style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>Rare Boutique</h2>
                                     <p>25K Followers</p>
                                 </div>
                             </div>
@@ -153,6 +159,59 @@ function SingleProduct() {
 
                 </div>
 
+                <div className='similerProducts-bx' style={{ backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg }}>
+                    <ReactSimplyCarousel
+                        activeSlideIndex={activeSlideIndex}
+                        onRequestChange={setActiveSlideIndex}
+                        itemsToShow={1}
+                        itemsToScroll={1}
+                        forwardBtnProps={{
+                            //here you can also pass className, or any other button element attributes
+                            style: {
+                                alignSelf: 'center',
+                                background: 'black',
+                                border: 'none',
+                                borderRadius: '50%',
+                                color: 'white',
+                                cursor: 'pointer',
+                                fontSize: '20px',
+                                height: 30,
+                                lineHeight: 1,
+                                textAlign: 'center',
+                                width: 30,
+                            },
+                            children: <span>{`>`}</span>,
+                        }}
+                        backwardBtnProps={{
+                            //here you can also pass className, or any other button element attributes
+                            style: {
+                                alignSelf: 'center',
+                                background: 'black',
+                                border: 'none',
+                                borderRadius: '50%',
+                                color: 'white',
+                                cursor: 'pointer',
+                                fontSize: '20px',
+                                height: 30,
+                                lineHeight: 1,
+                                textAlign: 'center',
+                                width: 30,
+                            },
+                            children: <span>{`<`}</span>,
+                        }}
+                        // responsiveProps={[
+                        //     {
+                        //         itemsToShow: 2,
+                        //         itemsToScroll: 2,
+                        //         minWidth: 768,
+                        //     },
+                        // ]}
+                        speed={400}
+                        easing="linear"
+                    >
+                        <ProductCardSimilar />
+                    </ReactSimplyCarousel>
+                </div>
 
             </div>
         </div>

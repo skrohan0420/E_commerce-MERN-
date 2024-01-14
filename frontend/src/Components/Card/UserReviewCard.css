@@ -5,7 +5,7 @@
     align-items: flex-start;
     justify-content: center;
     padding: 10px;
-    border: 1px solid darkgrey;
+    /* border: 1px solid darkgrey; */
     /* height: 100%; */
 }
 
@@ -15,7 +15,7 @@
     min-width: 40px;
     max-width: 40px;
     max-height: 40px;
-    background-color: red;
+    /* background-color: red; */
     overflow: hidden;
     border-radius: 100%;
 }

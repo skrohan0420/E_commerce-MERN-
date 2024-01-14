@@ -13,8 +13,8 @@ function UserReviewCard() {
                 <img src="https://eliteadmin.themedesigner.in/demos/bt4/assets/images/users/1.jpg" alt="" />
             </div>
 
-            <div className='rating-review'>
-                <h1>
+            <div className='rating-review' style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>
+                <h1 style={{color: darkMode ? theme.dark.textLight : theme.light.textLight}}>
                     Sk Rohan
                 </h1>
                 <p className='stars-bx'>
