@@ -989,6 +989,7 @@ input[type="submit"]:active {
 	padding: .50rem;
 	z-index: var(--z-tooltip);
 	transition: .4s;
+	z-index: 1000000;
 	border-radius: 100%;
 }
 
@@ -1003,6 +1004,7 @@ input[type="submit"]:active {
 	font-size: 2rem;
 	/* font-weight: 900; */
 	color: var(--container-color);
+	z-index: 1000000;
 }
 
 /* Show Scroll Up*/

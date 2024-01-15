@@ -159,56 +159,58 @@ function SingleProduct() {
 
                 </div>
 
-                <div className='similerProducts-bx' style={{ backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg }}>
+                <div className='similerProducts-bx'  style={{ backgroundColor: darkMode ? theme.dark.bgLight : theme.light.bg }}>
+                    <h2 style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>Similar Products</h2>
                     <ReactSimplyCarousel
                         activeSlideIndex={activeSlideIndex}
                         onRequestChange={setActiveSlideIndex}
-                        itemsToShow={1}
+                        itemsToShow={6}
                         itemsToScroll={1}
                         forwardBtnProps={{
                             //here you can also pass className, or any other button element attributes
                             style: {
-                                alignSelf: 'center',
-                                background: 'black',
-                                border: 'none',
-                                borderRadius: '50%',
-                                color: 'white',
-                                cursor: 'pointer',
-                                fontSize: '20px',
-                                height: 30,
-                                lineHeight: 1,
-                                textAlign: 'center',
-                                width: 30,
+                                position: 'absolute',
+                                height: '280px',
+                                right: '10px',
+                                top: '49px',
+                                zIndex: '10',
+                                width: '40px',
+                                fontSize: '40px',
+                                backgroundColor: darkMode ? theme.dark.bg : '#ddd',
+                                color: darkMode ? theme.dark.textLight : theme.light.textLight 
                             },
-                            children: <span>{`>`}</span>,
+                            children: <span><i className='bx bx-right-arrow-alt'></i></span>,
                         }}
                         backwardBtnProps={{
                             //here you can also pass className, or any other button element attributes
                             style: {
-                                alignSelf: 'center',
-                                background: 'black',
-                                border: 'none',
-                                borderRadius: '50%',
-                                color: 'white',
-                                cursor: 'pointer',
-                                fontSize: '20px',
-                                height: 30,
-                                lineHeight: 1,
-                                textAlign: 'center',
-                                width: 30,
+                                position: 'absolute',
+                                height: '280px',
+                                left: '10px',
+                                top: '49px',
+                                zIndex: '10',
+                                width: '40px',
+                                fontSize: '40px',
+                                backgroundColor: darkMode ? theme.dark.bg : '#ddd',
+                                 color: darkMode ? theme.dark.textLight : theme.light.textLight
                             },
-                            children: <span>{`<`}</span>,
+                            children: <span><i className='bx bx-left-arrow-alt'></i></span>,
                         }}
-                        // responsiveProps={[
-                        //     {
-                        //         itemsToShow: 2,
-                        //         itemsToScroll: 2,
-                        //         minWidth: 768,
-                        //     },
-                        // ]}
+                        responsiveProps={[
+                            {
+                                itemsToShow: 6,
+                                itemsToScroll: 1,
+                                minWidth: 768,
+                            },
+                        ]}
                         speed={400}
                         easing="linear"
                     >
+                        <ProductCardSimilar />
+                        <ProductCardSimilar />
+                        <ProductCardSimilar />
+                        <ProductCardSimilar />
+                        <ProductCardSimilar />
                         <ProductCardSimilar />
                     </ReactSimplyCarousel>
                 </div>

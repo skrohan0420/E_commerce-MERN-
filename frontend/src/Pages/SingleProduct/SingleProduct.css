@@ -160,6 +160,7 @@
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    position: relative;
 }
 
 
@@ -168,7 +169,9 @@
 @media screen and (max-width: 767px) {
     .poduct-page{
       flex-direction: column;
-      margin: 90px 1rem 0px 1rem ;
+      padding: 90px 2rem 0px 2rem ;
+      gap: 0px;
+
     }
     .slider-review{
         width: 100%;
