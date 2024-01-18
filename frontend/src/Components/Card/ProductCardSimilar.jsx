@@ -11,7 +11,7 @@ function ProductCardSimilar(props) {
         <Link>
             <article className="card" style={{ backgroundColor: darkMode ? theme.dark.bg : theme.light.bg }}>
                 <figure className="card-image">
-                    <img src={`${process.env.PUBLIC_URL}/assets/img/new2.png`} alt="An orange painted blue, cut in half laying on a blue background" />
+                    <img classNames="productImg" src={`${process.env.PUBLIC_URL}/assets/img/new2.png`} alt="An orange painted blue, cut in half laying on a blue background" />
                 </figure>
                 <div className="card-header">
                     <h1 style={{ color: darkMode ? theme.dark.textLight : theme.light.textLight }}>
