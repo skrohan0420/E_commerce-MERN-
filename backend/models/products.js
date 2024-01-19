@@ -6,9 +6,17 @@ const ProductDetailsSchema = Schema({
         type: String,
         required: true
     },
-    category: {
+    details: {
         type: String,
         required: true
+    },
+    category_id: {
+        type: Schema.Types.ObjectId, 
+        ref: 'categories'
+    },
+    keyFeatures:{
+        type: Array,
+        required: false
     },
     images: {
         type: Array,
@@ -34,6 +42,7 @@ const ProductDetailsSchema = Schema({
     onSale: {
         type: Boolean,
         required: true,
+        default: false
     },
     saleDetails: {
         type: {

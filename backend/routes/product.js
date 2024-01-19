@@ -4,7 +4,7 @@ const authUser = require('../middleware/authUser')
 const productController = require('../controllers/product')
 
 
-router.post('/',productController.singleProduct_get)
+router.post('/add',authUser,productController.addProduct)
 
 
 
