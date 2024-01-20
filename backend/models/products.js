@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
 const ProductDetailsSchema = Schema({
     name: {
         type: String,
@@ -11,15 +12,35 @@ const ProductDetailsSchema = Schema({
         required: true
     },
     category_id: {
-        type: Schema.Types.ObjectId, 
+        type: Schema.Types.ObjectId,
         ref: 'categories'
     },
-    keyFeatures:{
-        type: Array,
+    keyFeatures: {
+        type: [String],
+        validate: {
+            validator: function (arr) {
+                // Custom validation function to check if all elements are strings
+                return Array.isArray(arr) && arr.every(item => typeof item === 'string');
+            },
+            message: 'keyFeatures array must contain only strings.'
+        },
         required: false
     },
     images: {
-        type: Array,
+        type: [
+            {
+                imgURL: {
+                    type: String,
+                    required: true
+                },
+                imgAlt: {
+                    type: String,
+                    required: true,
+                    default: "https://healthcoaching.prebuiltsites.com/wp-content/uploads/2020/06/placeholder-image.jpg"
+                }
+            },
+        ],
+        _id: false ,
         required: true
     },
     coverImage: {
@@ -37,6 +58,7 @@ const ProductDetailsSchema = Schema({
                 required: false,
             }
         },
+        _id: false ,
         required: false,
     },
     onSale: {
@@ -51,10 +73,11 @@ const ProductDetailsSchema = Schema({
                 required: false,
             },
             salePrice: {
-                type: Number, 
+                type: Number,
                 required: false,
             }
         },
+        _id: false ,
         required: false,
     }
 }, { timestamps: true });
