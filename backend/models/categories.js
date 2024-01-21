@@ -8,7 +8,8 @@ const categorySchema = new Schema({
     },
     parent: { 
         type: Schema.Types.ObjectId, 
-        ref: 'categories' 
+        ref: 'categories',
+        required: false
     }
 },{ timestamps: true });
 

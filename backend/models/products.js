@@ -11,9 +11,10 @@ const ProductDetailsSchema = Schema({
         type: String,
         required: true
     },
-    category_id: {
+    categoryId: {
         type: Schema.Types.ObjectId,
-        ref: 'categories'
+        ref: 'categories',
+        required: true
     },
     keyFeatures: {
         type: [String],

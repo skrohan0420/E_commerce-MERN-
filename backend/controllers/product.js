@@ -1,34 +1,34 @@
 const productModel = require('../models/products')
-const categoriesModel = require('../models/categories')
-const dotenv = require('dotenv');
-const { ObjectId } = require('mongodb');
+require('dotenv').config();
 
 
-
-
-const getProductsByCondition = async (productId) => {
+const getProductsByCondition = async (params) => {
     try {
         let result;
-        if (productId) {
-            result = await productModel.details.findOne({ _id: productId });
+
+        if (params.productId) {
+            result = await productModel.details.findOne({ _id: params.productId });
             result = result ? [result] : [];
-        } else {
-            result = await productModel.details.find();
+        } else if (params.categoryId) {
+            result = await productModel.details.findOne({ categoryId: params.categoryId });
+            result = result ? [result] : [];
+        } else if (params.allProduct) {
+            result = await productModel.details.find({});
             result = result || [];
         }
-        result = result.map(doc => {
-            const updatedCoverImage = process.env.BACKEND_URL + (process.env.PRODUCT_IMG_PATH || '') + doc.coverImage;
+
+        result =  result ? result.map(doc => {
+            const updatedCoverImage = process.env.BACKEND_URL + (process.env.PRODUCT_IMG_PATH || '') +'/'+ doc.coverImage;
             const updatedImages = doc.images ? doc.images.map(image => ({
-                imgURL: process.env.BACKEND_URL + (process.env.PRODUCT_IMG_PATH || '') + image.imgURL ,
-                imgAlt:  image.imgAlt 
+                imgURL: process.env.BACKEND_URL + (process.env.PRODUCT_IMG_PATH || '') +'/'+ image.imgURL,
+                imgAlt: image.imgAlt
             })) : null;
-            return { 
+            return {
                 ...doc._doc,
                 coverImage: updatedCoverImage,
-                images : updatedImages
+                images: updatedImages
             };
-        });
-
+        }) : [];
         return result;
     } catch (err) {
         console.error('Error in getProductsByCondition:', err.message);
@@ -38,29 +38,38 @@ const getProductsByCondition = async (productId) => {
 
 let getProducts = async (req, res) => {
     if (req.body) {
-        try{
-            let success = false
-            let products = []
-            let message = ''
-    
-            if(req.body.allProduct){
-                products = await getProductsByCondition();
-            }else if(req.body.productId){
-                products = await getProductsByCondition(req.body.productId);
-            }
-            console.log(products)
+        try {
+            let success = false;
+            let products = [];
+            let message = '';
 
-            success = products.length != 0   
-            message = success ? "products found" : "products not found"
+            let options = {};
+
+            if (req.body.allProduct) {
+                options.allProduct = req.body.allProduct;
+            } else if (req.body.productId) {
+                options.productId = req.body.productId;
+            } else if (req.body.categoryId) {
+                // =======================================================================
+                // category work pending for fetching products from all children categorys
+                options.categoryId = req.body.categoryId;
+                // =======================================================================
+            }
+
+
+            products = await getProductsByCondition(options);
+            success = products.length !== 0;
+            message = success ? 'products found' : 'products not found';
             res.json({ success: success, message: message, products: products });
-        }catch(err){
+        } catch (err) {
             res.json({ success: false, message: 'Internal Server Error', error: err.message });
         }
     } else {
         res.json({ success: false, message: 'No Product Specified' });
     }
+};
 
-}
+
 
 let addProduct = async (req, res) => {
     if (req.body) {
@@ -80,7 +89,6 @@ let addProduct = async (req, res) => {
         res.json({ success: false, message: 'add product details' });
     }
 };
-
 
 
 
